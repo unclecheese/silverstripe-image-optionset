@@ -1,0 +1,6 @@
+---
+Name: imageoptionsetfield
+---
+ImageOptionsetField:
+  default_image_width: 300
+  default_image_height: 300
