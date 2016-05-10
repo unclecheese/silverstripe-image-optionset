@@ -1,0 +1,15 @@
+{
+    "name": "unclecheese/silverstripe-image-optionset",
+    "description": "Provides a list of selectable items that use images as the primary label instead of text.",
+    "type": "silverstripe-module",
+    "keywords": ["silverstripe", "optionsetfield", "image", "radio"],
+	"license": "GNU",
+    "authors": [
+    {
+        "name": "Uncle Cheese",
+        "email": "unclecheese@leftandmain.com"
+    }],
+    "require": {
+        "silverstripe/framework": "~3.1"
+    }
+}
