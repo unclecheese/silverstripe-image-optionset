@@ -65,15 +65,15 @@ class ImageOptionsetField extends OptionsetField
      * @param $key
      * @return mixed
      */
-    public function ImageForItem($key)
+    public function StyleAttributes($key)
     {
         if (isset($this->imageIndex[$key])) {
             $imagePath = $this->imageIndex[$key];
-            if (Director::fileExists($imagePath)) {
-                $imageObj = Image_Cached::create($imagePath);
-
-                return $imageObj->CroppedImage($this->imageWidth, $this->imageHeight);
-            }
+            return sprintf(
+                'width:auto;height:%spx;background:url(%s);background-size:cover;',
+                $this->getImageHeight(),
+                $imagePath
+            );
         }
     }
 

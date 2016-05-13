@@ -22,8 +22,9 @@
 }
 
 .imageoptionsetfield-image {
-    padding: 5px;
     text-align:center;
+    border-radius:5px;
+    padding:5px;
 }
 
 .imageoptionsetfield-title {
@@ -34,10 +35,13 @@
 }
 
 .imageoptionset li input:checked + label .imageoptionsetfield-image {
-    background:#ccc;
+    padding:0;
 }
-
+.imageoptionset li input:checked + label .imageoptionsetfield-image > div {
+    border: 5px solid #2B80FF;
+}
 .imageoptionset li input:checked + label .imageoptionsetfield-title:before {
     content: "\2713 ";
-    color: #006d00;
+    font-size:16px;
+    color: #2B80FF;
 }
