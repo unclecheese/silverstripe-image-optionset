@@ -70,7 +70,8 @@ class ImageOptionsetField extends OptionsetField
         if (isset($this->imageIndex[$key])) {
             $imagePath = $this->imageIndex[$key];
             return sprintf(
-                'width:auto;height:%spx;background:url(%s);background-size:cover;',
+                'width:%spx;height:%spx;background:url(%s);background-size:cover;',
+                $this->getImageWidth(),
                 $this->getImageHeight(),
                 $imagePath
             );
