@@ -3,6 +3,12 @@
 /**
  * Class ImageOptionsetField
  */
+namespace UncleCheese\Forms;
+
+use Psr\Log\InvalidArgumentException;
+use SilverStripe\Forms\OptionsetField;
+use SilverStripe\View\Requirements;
+
 class ImageOptionsetField extends OptionsetField
 {
     /**

@@ -1,6 +1,6 @@
 ---
 Name: imageoptionsetfield
 ---
-ImageOptionsetField:
+UncleCheese\Forms\ImageOptionsetField:
   default_image_width: 300
   default_image_height: 300

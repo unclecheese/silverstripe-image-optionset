@@ -1,4 +1,9 @@
 <?php
+namespace UncleCheese\Tests;
+
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Dev\SapphireTest;
+use UncleCheese\Forms\ImageOptionsetField;
 
 class ImageOptionsetFieldTest extends SapphireTest
 {
