@@ -14,7 +14,7 @@ Provides a list of selectable items that use images as the primary label instead
 
 You can configure the default width and height of the images.
 ```yaml
-ImageOptionsetField:
+UncleCheese\Forms\ImageOptionsetField:
   default_image_width: 300
   default_image_height: 300
 ```

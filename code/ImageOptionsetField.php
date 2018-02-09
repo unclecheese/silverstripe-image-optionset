@@ -89,7 +89,7 @@ class ImageOptionsetField extends OptionsetField
      */
     public function Field($properties = [])
     {
-        Requirements::css(IMAGEOPTIONSETFIELD_PATH.'/css/imageoptionsetfield.css');
+        Requirements::css('unclecheese/silverstripe-image-optionset: css/imageoptionsetfield.css');
 
         return parent::Field($properties);
     }
