@@ -12,9 +12,9 @@
     "require": {
         "silverstripe/framework": "^4"
     },
-    "extras": {
+    "extra": {
         "expose": [
-            "css/imageoptionsetfield.css"
+            "css"
         ]
     }
 }
