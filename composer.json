@@ -11,5 +11,10 @@
     }],
     "require": {
         "silverstripe/framework": "^4"
+    },
+    "extras": {
+        "expose": [
+            "css/imageoptionsetfield.css"
+        ]
     }
 }
