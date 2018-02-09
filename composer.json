@@ -3,7 +3,7 @@
     "description": "Provides a list of selectable items that use images as the primary label instead of text.",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "optionsetfield", "image", "radio"],
-	"license": "GNU",
+	"license": "BSD-3-Clause",
     "authors": [
     {
         "name": "Uncle Cheese",
