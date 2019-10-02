@@ -4,3 +4,9 @@ Name: imageoptionsetfield
 UncleCheese\Forms\ImageOptionsetField:
   default_image_width: 300
   default_image_height: 300
+
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - 'unclecheese/silverstripe-image-optionset: css/imageoptionsetfield.css'
+  extra_requirements_javascript:
+    - 'unclecheese/silverstripe-image-optionset:client/dist/js/bundle.js'

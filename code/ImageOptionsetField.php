@@ -12,6 +12,11 @@ use SilverStripe\View\Requirements;
 class ImageOptionsetField extends OptionsetField
 {
     /**
+     * @var string
+     */
+    protected $schemaComponent = 'ImageOptionsetField';
+    
+    /**
      * @var array
      */
     protected $imageIndex = [];
@@ -32,7 +37,7 @@ class ImageOptionsetField extends OptionsetField
      * @param null|string $title
      * @param array|ArrayAccess $source
      * @param string $value
-     * @param Form|null $form
+     * @param \SilverStripe\Forms\Form|null $form
      * @param null $emptyString
      */
     public function __construct($name, $title = null, $source=array(), $value='', $form=null, $emptyString=null)
@@ -46,7 +51,7 @@ class ImageOptionsetField extends OptionsetField
     /**
      * @param array|ArrayAccess $source
      * @return ImageOptionsetField
-     * @throws Exception
+     * @throws \Exception
      */
     public function setSource($source)
     {
@@ -69,6 +74,18 @@ class ImageOptionsetField extends OptionsetField
 
     /**
      * @param $key
+     * @return bool|mixed
+     */
+    public function getOptionImage($key)
+    {
+        if (isset($this->imageIndex[$key])) {
+            return $this->imageIndex[$key];
+        }
+        return false;
+    }
+
+    /**
+     * @param $key
      * @return mixed
      */
     public function StyleAttributes($key)
@@ -78,20 +95,9 @@ class ImageOptionsetField extends OptionsetField
             return sprintf(
                 'width:auto;height:%spx;background:url(%s);background-size:cover;',
                 $this->getImageHeight(),
-                $imagePath
+                $this->getOptionImage($key)
             );
         }
-    }
-
-    /**
-     * @param array $properties
-     * @return HTMLText
-     */
-    public function Field($properties = [])
-    {
-        Requirements::css('unclecheese/silverstripe-image-optionset: css/imageoptionsetfield.css');
-
-        return parent::Field($properties);
     }
 
     /**
@@ -132,5 +138,30 @@ class ImageOptionsetField extends OptionsetField
         return $this;
     }
 
+    /**
+     * @return array
+     */
+    public function getSchemaStateDefaults()
+    {
+        $data = parent::getSchemaStateDefaults();
+        $disabled = $this->getDisabledItems();
+
+        $data['imageWidth'] = $this->getImageWidth();
+        $data['imageHeight'] = $this->getImageHeight();
+
+        $source = $this->getSource();
+        $data['source'] = (is_array($source))
+            ? array_map(function ($value, $title) use ($disabled) {
+                return [
+                    'value' => $value,
+                    'title' => $title,
+                    'disabled' => in_array($value, $disabled),
+                    'image' => $this->getOptionImage($value),
+                ];
+            }, array_keys($source), $source)
+            : [];
+
+        return $data;
+    }
 
 }
