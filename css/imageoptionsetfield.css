@@ -39,9 +39,20 @@
     margin:10px 0;
 }
 
+.imageoptionset li input + label .imageoptionsetfield-image > div {
+    outline: 5px solid transparent;
+}
+
 .imageoptionset li input:checked + label .imageoptionsetfield-image > div {
     outline: 5px solid #2B80FF;
 }
+
+.imageoptionset li input + label .imageoptionsetfield-title:before {
+    content: "\2713 ";
+    font-size:16px;
+    color: transparent;
+}
+
 .imageoptionset li input:checked + label .imageoptionsetfield-title:before {
     content: "\2713 ";
     font-size:16px;

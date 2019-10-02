@@ -14,7 +14,8 @@
     },
     "extra": {
         "expose": [
-            "css"
+            "css",
+            "client/dist"
         ]
     }
 }
