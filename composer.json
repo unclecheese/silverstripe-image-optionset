@@ -10,7 +10,7 @@
         "email": "unclecheese@leftandmain.com"
     }],
     "require": {
-        "silverstripe/framework": "^4"
+        "silverstripe/framework": "^4 || ^5 || ^6"
     },
     "extra": {
         "expose": [
